@@ -1,5 +1,3 @@
-Original readme of okvis is saved in README_origin.md. This project is forked from okvis. We add LeadSense examples.
-
 # VINS-Mono
 ## A Robust and Versatile Monocular Visual-Inertial State Estimator
 **29 Dec 2017**: New features: Add map merge, pose graph reuse, online temporal calibration function, and support rolling shutter camera. Map reuse videos: 
@@ -57,15 +55,9 @@ additional ROS pacakge
 ```
 
 
-1.2 **Ceres Solver**
+1.2. **Ceres Solver**
 Follow [Ceres Installation](http://ceres-solver.org/installation.html), remember to **make install**.
 (Our testing environment: Ubuntu 16.04, ROS Kinetic, OpenCV 3.3.1, Eigen 3.3.3) 
-
-
-1.3 **EvoBinoSDK**
-
-- Download the latest version of the EvoBinoSDK on [LeadSense official site](http://leadsense.ilooktech.com/developer).
-- For more EvoBinoSDK information, read the [Technical Documents](http://leadsense.ilooktech.com/sdk/docs/).
 
 ## 2. Build VINS-Mono on ROS
 Clone the repository and catkin_make:
@@ -163,21 +155,3 @@ The source code is released under [GPLv3](http://www.gnu.org/licenses/) license.
 We are still working on improving the code reliability. For any technical issues, please contact Tong QIN <tong.qinATconnect.ust.hk> or Peiliang LI <pliapATconnect.ust.hk>.
 
 For commercial inquiries, please contact Shaojie SHEN <eeshaojieATust.hk>
-
-## 8. Run with LeadSense
-8.1 Edit the config file: `/config/leadsense/leadsense_config.yaml`:
-
-- Change `image_width`, `image_height` with target resolution.
-- Change `fx`, `fy`, `cx`, `cy` with rectified stereo parameters.
-- Change `extrinsicRotation`, `extrinsicTranslation` if you do camera-IMU calibration.
-- Change `acc_n`, `gyr_n`, `acc_w`, `gyr_w` if you do IMU parameter calibration.
-
-8.2 Start LeadSense node with the selected resolution, without distance calculation. (eg. 640*400 30fps)
-```
-	roslaunch leadsense_ros leadsense_nodisplay.launch calc_distance:=false resolution_fps:=21
-```
-8.3 Start VINS estimator.
-```
-	roslaunch vins_estimator leadsense.launch
-```
-
