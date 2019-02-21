@@ -1,4 +1,4 @@
-Original readme of okvis is saved in README_origin.md. This project is forked from okvis. We add LeadSense examples.
+Original readme of VINS-Mono is saved in README_origin.md. This project is forked from VINS-Mono. We add LeadSense examples.
 
 # VINS-Mono
 ## A Robust and Versatile Monocular Visual-Inertial State Estimator
